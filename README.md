@@ -24,7 +24,7 @@ You need **Python 3.x** installed on your system.
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [Your Repository URL Here]
+    git clone ["https://github.com/Wiruden/BookLogger"]
     cd BookLogger
     ```
 2.  **Run the Script:**
