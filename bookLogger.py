@@ -69,12 +69,12 @@ def log_book(book_title, pages_read, status, file_name):
     file_path = os.path.join(dir_name, file_name)
     
     with open(file_path, 'a') as file:
-        if(pages_read > 0):
+        if(pages_read):
             file.write(f"Title: {book_title}, Pages Read: {pages_read}\n")
         else:
             file.write(f"Title: {book_title}\n")
     
-
+#Delete operation
 def delete_helper(file_path, book_title):
     with open(file_path, 'r') as file:
         found = False
@@ -92,8 +92,6 @@ def delete_helper(file_path, book_title):
                 file.writelines(lines_to_keep)
         else:
             print(f"Could not find {book_title}")
-
-
 
 #Deletes books
 def delete_book(book_title):
