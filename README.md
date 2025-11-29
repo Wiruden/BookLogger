@@ -37,7 +37,7 @@ The program will automatically create a directory named `Book Logs` in the same 
 ## 📖 Usage Example
 
 When you run the script, you will be prompted with a menu:
-    1. Log a book 2. Delete a book 3. Edit pages 4. View a file(Press 'X' to exit)
+1. Log a book 2. Delete a book 3. Edit pages 4. View a file(Press 'X' to exit)
 
 ## 🛣️ Future Enhancements
 
