@@ -47,3 +47,4 @@ When you run the script, you will be prompted with a menu:
 ## 🛣️ Future Enhancements
 
 * **Search Functionality:** Implement a tool to search all logs for a specific title.
+* **GUI Migration: Convert the application into a desktop application using Tkinter or another framework.
