@@ -88,7 +88,7 @@ def delete_helper(file_path, book_title):
                 
         if(found):
             with open(file_path, 'w') as file:
-                print(f"Deleting '{book_title}'")
+                print(f"Deleting '{book_title}' from '{file_path}'")
                 file.writelines(lines_to_keep)
         else:
             print(f"Could not find {book_title}")
@@ -203,12 +203,19 @@ def show_list(file_name):
                 print(f"{index} {row}")
             index += 1
         
+#Moves a book
+def move_book(book_title, statusIn, statusOut, pages_read):
+    file_pathIn = os.path.join(dir_name, get_filename(statusIn))
+    delete_helper(file_pathIn, book_title)
+    log_book(book_title, pages_read, statusOut, get_filename(statusOut))
+
+
 
 while True:
-    choice = input("1. Log a book 2. Delete a book 3. Edit pages 4. View a file(Press 'X' to exit) ")
-    
+    choice = input("1. Log a book 2. Delete a book 3. Edit pages 4. View a file 5. Move a book(Press 'X' to exit) ")
+    pages_read = ""
     if(choice == "1"):
-        pages_read = ""
+        
 
         book_title = input("Book Title: ")
         while True:
@@ -243,3 +250,24 @@ while True:
             else:
                 print("Invalid status. Please enter Completed, Reading, or Planned.")
         show_list(get_filename(status))
+        
+    elif(choice == "5"):
+        book_title = input("Title of the book you want to move: ")
+        while True:
+            statusIn = input("Status of the book you want to move(Completed, Reading, Planned): ")
+            if(statusIn.lower() == "completed" or statusIn.lower() == "reading" or statusIn.lower() == "planned"):
+                break
+            else:
+                print("Invalid status. Please enter Completed, Reading, or Planned.")
+        while True:
+            statusOut = input("Which file do you want to move it into(Completed, Reading, Planned): ")
+            if(statusOut.lower() == "completed" or statusOut.lower() == "reading" or statusOut.lower() == "planned"):
+                if(statusOut.lower() == "reading"):
+                    pages_read = input("How many pages have you read: ")
+                
+                move_book(book_title, statusIn, statusOut, pages_read)
+                break
+            else:
+                print("Invalid status. Please enter Completed, Reading, or Planned.")
+        
+        
