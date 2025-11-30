@@ -12,6 +12,7 @@ The Book Logger provides a command-line interface with the following functions:
 * **Edit Pages:** Update the number of pages read for a book in the "Reading" log using regular expressions (`re`).
 * **Delete a Book:** Remove an entry from any of the three log files.
 * **View a File:** Display the numbered contents of any of the three log files.
+* **Move a Book:** Transfer an entry from one status list to another (e.g., from Planned to Reading), demonstrating advanced function reuse.
 * **Persistent Data:** All data is saved automatically to local `.txt` files.
 
 ## 🛠️ Installation and Setup
@@ -24,7 +25,7 @@ You need **Python 3.x** installed on your system.
 
 1.  **Clone the Repository:**
     ```bash
-    git clone ["https://github.com/Wiruden/BookLogger"]
+    git clone [https://github.com/Wiruden/BookLogger](https://github.com/Wiruden/BookLogger)
     cd BookLogger
     ```
 2.  **Run the Script:**
@@ -38,11 +39,9 @@ The program will automatically create a directory named `Book Logs` in the same 
 
 When you run the script, you will be prompted with a menu:
 
-    1. Log a book 2. Delete a book 3. Edit pages 4. View a file (Press 'X' to exit):
-
+```bash
+1. Log a book 2. Delete a book 3. Edit pages 4. View a file 5. Move a book (Press 'X' to exit):
 
 ## 🛣️ Future Enhancements
 
-* **Move Book Function:** Add dedicated menu option to transfer a book between logs (e.g., from Planned to Reading) using your existing `delete` and `log` logic.
 * **Search Functionality:** Implement a tool to search all logs for a specific title.
-* **Data Consistency:** Refactor log functions to ensure all entries use a single, standardized format (e.g., always include "Pages Read: 0" for planned/completed books).
