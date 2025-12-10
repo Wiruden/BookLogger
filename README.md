@@ -70,7 +70,7 @@ python app.py
 BookLogger/
 │
 ├── python/                 # Backend Logic
-│   ├── app.py           # The Flask API (handles auto-launch)
+│   ├── app.py              # The Flask API (handles auto-launch)
 │   └── Book Logs/          # Generated automatically
 │       ├── Completed_Books_Log.txt
 │       ├── Reading_Books_Log.txt
