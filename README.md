@@ -1,50 +1,102 @@
-# 📚 Python Command-Line Book Logger
+# 📚 Book Logger Web App
 
-A simple command-line Python application designed to help track and manage your reading list across three distinct categories: **Completed**, **Currently Reading**, and **Planned**.
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat&logo=python)
+![Flask](https://img.shields.io/badge/Flask-Backend-green?style=flat&logo=flask)
+![Frontend](https://img.shields.io/badge/Frontend-HTML%2FCSS%2FJS-orange?style=flat)
 
-This project demonstrates core Python skills including file I/O operations, string manipulation, input validation, and code refactoring.
+A clean, modern web application designed to help track and manage your reading list. This project has evolved from a simple Python command-line script into a **full-stack web application** featuring a Flask REST API backend and a responsive HTML/CSS/JS frontend.
+
+It tracks books across three distinct categories: **Completed**, **Currently Reading**, and **Planned**.
 
 ## ✨ Features
 
-The Book Logger provides a command-line interface with the following functions:
+* **Web Interface:** A responsive GUI to manage books without touching the terminal.
+* **Kanban-style Tracking:** View your books categorized into three clear columns.
+* **REST API Backend:** Uses Python Flask to handle data requests (GET, POST).
+* **Dynamic Logging:** Instantly add new books to your "Planned" list.
+* **State Management:** Move books between statuses (e.g., from *Planned* to *Reading*) using an intuitive dropdown menu.
+* **Persistent Data:** All data is automatically saved to local text files (`.txt`) in a `Book Logs` directory, acting as a flat-file database.
 
-* **Log a Book:** Add a new book to the Completed, Reading, or Planned log files.
-* **Edit Pages:** Update the number of pages read for a book in the "Reading" log using regular expressions (`re`).
-* **Delete a Book:** Remove an entry from any of the three log files.
-* **View a File:** Display the numbered contents of any of the three log files.
-* **Move a Book:** Transfer an entry from one status list to another (e.g., from Planned to Reading), demonstrating advanced function reuse.
-* **Persistent Data:** All data is saved automatically to local `.txt` files.
+## 🛠️ Tech Stack
 
-## 🛠️ Installation and Setup
+* **Backend:** Python 3, Flask, Flask-CORS
+* **Frontend:** HTML5, CSS3, Vanilla JavaScript (Fetch API)
+* **Data Storage:** Plain Text Files (Flat-file storage)
+
+## 🚀 Installation and Setup
 
 ### Prerequisites
 
 You need **Python 3.x** installed on your system.
 
-### How to Run
+### 1. Clone and Setup
 
-1.  **Clone the Repository:**
-    ```bash
-    git clone https://github.com/Wiruden/BookLogger
-    cd BookLogger
-    ```
-2.  **Run the Script:**
-    ```bash
-    python bookLogger.py
-    ```
+Clone the repository and navigate to the folder:
 
-The program will automatically create a directory named `Book Logs` in the same folder, containing the three `.txt` log files.
+```bash
+git clone https://github.com/Wiruden/BookLogger
+cd BookLogger
+````
 
-## 📖 Usage Example
+### 2\. Install Dependencies
 
-When you run the script, you will be prompted with a menu:
+You will need to install `Flask` and `Flask-CORS` to run the backend server:
 
-    ```bash
-    1. Log a book 2. Delete a book 3. Edit pages 4. View a file 5. Move a book (Press 'X' to exit):
+```bash
+pip install flask flask-cors
+```
 
+### 3\. Start the Backend Server
 
+Run the Python script to start the API:
 
-## 🛣️ Future Enhancements
+```bash
+python server.py
+```
 
-* **Search Functionality:** Implement a tool to search all logs for a specific title.
-* **GUI Migration:** Convert the application into a desktop application using Tkinter or another framework.
+*You should see a message in the terminal saying "Server is running on port 5000..."*
+
+### 4\. Launch the Frontend
+
+Simply open `index.html` in your preferred web browser.
+
+> **Note:** Ensure the backend server is running in the background, otherwise the website will not be able to load or save your book data\!
+
+## 📖 Usage Guide
+
+1.  **Add a Book:** Type a book title in the input box at the top and click **"Log Book"**. It will appear in the "Planned" column.
+2.  **Manage a Book:** Click the pencil icon (✎) next to any book title to open the action menu.
+      * **Move:** Select a new category (e.g., "Move to Reading") to transfer the book.
+      * **Delete:** Remove the book permanently from your logs.
+3.  **Data Persistence:** You can close the browser or stop the server; your data remains saved in the `Book Logs` folder.
+
+## 📂 Project Structure
+```text
+
+BookLogger/
+│
+├── python/                 # Backend Logic
+│   ├── server.py           # The Flask API
+│   └── Book Logs/          # Generated automatically by server.py
+│       ├── Completed_Books_Log.txt
+│       ├── Reading_Books_Log.txt
+│       └── Planned_Books_Log.txt
+│
+├── website/                # Frontend Interface
+│   ├── index.html          # Main webpage
+│   ├── style.css           # Styling
+│   └── script.js           # API connections
+│
+├── .gitignore
+└── README.md
+```
+
+## 🛣️ ROADMAP / Future Enhancements
+
+  * **Database Integration:** Migrate from `.txt` files to SQLite for more robust data handling.
+  * **Book Metadata:** Integrate with the Google Books API to automatically fetch book covers and page counts.
+  * **Reading Stats:** Add a visual dashboard showing books read per month.
+
+-----
+
+*Created by Wiruden*
