@@ -2,6 +2,8 @@ import os
 import datetime
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+import webbrowser
+from threading import Timer
 
 app = Flask(__name__)
 CORS(app)  # Allows the website to talk to this script
@@ -139,8 +141,23 @@ def move_book_route():
     print(f"Moved {title} from {old_status} to {new_status}")
     return jsonify({"message": "Moved successfully"})
 
+def open_browser():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    html_path = os.path.join(script_dir, '..', 'website', 'index.html')
+    
+    html_path = os.path.abspath(html_path)
+    
+    print(f"Opening website at: {html_path}")
+    
+    webbrowser.open_new(html_path)
+
 # --- START THE SERVER ---
 if __name__ == '__main__':
     ensure_files_exist()
     print("Server is running on port 5000...")
+    
+    if not os.environ.get("WERKZEUG_RUN_MAIN"):
+        Timer(1, open_browser).start()
+    
     app.run(debug=True, port=5000)

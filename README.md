@@ -10,12 +10,11 @@ It tracks books across three distinct categories: **Completed**, **Currently Rea
 
 ## ✨ Features
 
-* **Web Interface:** A responsive GUI to manage books without touching the terminal.
+* **Auto-Launch:** The application automatically opens your default web browser when started.
 * **Kanban-style Tracking:** View your books categorized into three clear columns.
 * **REST API Backend:** Uses Python Flask to handle data requests (GET, POST).
-* **Dynamic Logging:** Instantly add new books to your "Planned" list.
 * **State Management:** Move books between statuses (e.g., from *Planned* to *Reading*) using an intuitive dropdown menu.
-* **Persistent Data:** All data is automatically saved to local text files (`.txt`) in a `Book Logs` directory, acting as a flat-file database.
+* **Persistent Data:** All data is automatically saved to local text files (`.txt`) in a `Book Logs` directory.
 
 ## 🛠️ Tech Stack
 
@@ -31,36 +30,31 @@ You need **Python 3.x** installed on your system.
 
 ### 1. Clone and Setup
 
-Clone the repository and navigate to the folder:
+Clone the repository and navigate to the project root:
 
 ```bash
-git clone https://github.com/Wiruden/BookLogger
+git clone [https://github.com/Wiruden/BookLogger](https://github.com/Wiruden/BookLogger)
 cd BookLogger
 ````
 
 ### 2\. Install Dependencies
 
-You will need to install `Flask` and `Flask-CORS` to run the backend server:
+You will need to install `Flask` and `Flask-CORS`:
 
 ```bash
 pip install flask flask-cors
 ```
 
-### 3\. Start the Backend Server
+### 3\. Run the Application
 
-Run the Python script to start the API:
+Navigate to the `python` directory and start the script. This will start the local server and **automatically launch the GUI** in your web browser.
 
 ```bash
-python server.py
+cd python
+python app.py
 ```
 
-*You should see a message in the terminal saying "Server is running on port 5000..."*
-
-### 4\. Launch the Frontend
-
-Simply open `index.html` in your preferred web browser.
-
-> **Note:** Ensure the backend server is running in the background, otherwise the website will not be able to load or save your book data\!
+*You should see a message in the terminal saying "Server is running on port 5000..." and your browser will pop up automatically.*
 
 ## 📖 Usage Guide
 
@@ -68,16 +62,16 @@ Simply open `index.html` in your preferred web browser.
 2.  **Manage a Book:** Click the pencil icon (✎) next to any book title to open the action menu.
       * **Move:** Select a new category (e.g., "Move to Reading") to transfer the book.
       * **Delete:** Remove the book permanently from your logs.
-3.  **Data Persistence:** You can close the browser or stop the server; your data remains saved in the `Book Logs` folder.
+3.  **Data Persistence:** You can close the browser or stop the server; your data remains saved in the `python/Book Logs` folder.
 
 ## 📂 Project Structure
-```text
 
+```text
 BookLogger/
 │
 ├── python/                 # Backend Logic
-│   ├── server.py           # The Flask API
-│   └── Book Logs/          # Generated automatically by server.py
+│   ├── app.py           # The Flask API (handles auto-launch)
+│   └── Book Logs/          # Generated automatically
 │       ├── Completed_Books_Log.txt
 │       ├── Reading_Books_Log.txt
 │       └── Planned_Books_Log.txt
@@ -91,11 +85,11 @@ BookLogger/
 └── README.md
 ```
 
-## 🛣️ ROADMAP / Future Enhancements
+## 🛣️ ROADMAP
 
-  * **Database Integration:** Migrate from `.txt` files to SQLite for more robust data handling.
-  * **Book Metadata:** Integrate with the Google Books API to automatically fetch book covers and page counts.
-  * **Reading Stats:** Add a visual dashboard showing books read per month.
+  * **Executable Creation:** Bundle into a `.exe` using Auto-Py-To-Exe for simpler distribution.
+  * **Database Integration:** Migrate from `.txt` files to SQLite.
+  * **Book Metadata:** Integrate with Google Books API for cover art.
 
 -----
 
