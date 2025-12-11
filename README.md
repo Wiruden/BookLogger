@@ -85,6 +85,10 @@ BookLogger/
 └── README.md
 ```
 
+
+## 🎨 Application Interface
+<img width="1913" height="950" alt="Screenshot 2025-12-11 193709" src="https://github.com/user-attachments/assets/0e1d1be0-7d9a-4d2a-9785-f4d3e2f17c97" />
+
 ## 🛣️ ROADMAP
 
   * **Executable Creation:** Bundle into a `.exe` using Auto-Py-To-Exe for simpler distribution.
