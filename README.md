@@ -33,7 +33,7 @@ You need **Python 3.x** installed on your system.
 Clone the repository and navigate to the project root:
 
 ```bash
-git clone [https://github.com/Wiruden/BookLogger](https://github.com/Wiruden/BookLogger)
+git clone https://github.com/Wiruden/BookLogger
 cd BookLogger
 ````
 
